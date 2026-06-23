@@ -1,0 +1,619 @@
+/* =========================
+   Base
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f7f0e6;
+  color: #2d2d2d;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+/* =========================
+   Navigation / Header
+========================= */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.name,
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subtitle,
+.soft-title {
+  color: #8d8a84;
+  font-weight: 400;
+}
+
+/* =========================
+   Corkboard Shell
+========================= */
+
+.board-section {
+  width: 100%;
+  padding: 3rem 0 5rem;
+}
+
+.corkboard {
+  width: min(1220px, 96vw);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  background-color: #b77b45;
+  background-image:
+    radial-gradient(circle, rgba(255, 236, 190, 0.45) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(74, 38, 12, 0.25) 1px, transparent 1.5px);
+  background-size: 14px 14px, 20px 20px;
+  background-position: 0 0, 7px 8px;
+
+  border: 18px solid #e2b78b;
+  box-shadow:
+    inset 0 0 0 4px rgba(255, 229, 185, 0.25),
+    0 25px 45px rgba(0, 0, 0, 0.18);
+}
+
+.item {
+  position: absolute;
+  display: block;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   Pins
+========================= */
+
+.pin {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff4cc, #d2a15b 55%, #744717);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
+  z-index: 50;
+}
+
+.blue-pin {
+  background: radial-gradient(circle at 35% 30%, #e9f8ff, #2d8cca 55%, #17466f);
+}
+
+.purple-pin {
+  background: radial-gradient(circle at 35% 30%, #f4ddff, #9b59c9 55%, #5e2f7a);
+}
+
+/* remove the pin from the Performance Review cartridge */
+.project-cartridge .pin {
+  display: none;
+}
+
+/* =========================
+   Polaroids
+========================= */
+
+.polaroid {
+  background: #f5eee0;
+  padding: 0.7rem 0.7rem 1.15rem;
+  color: #222;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.22);
+}
+
+.polaroid img {
+  height: 78%;
+  object-fit: cover;
+}
+
+.polaroid p {
+  margin-top: 0.45rem;
+  font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* =========================
+   Left Cluster
+========================= */
+
+.bryan-photo {
+  width: 20%;
+  height: 34%;
+  left: 5%;
+  top: 7%;
+  transform: rotate(-5deg);
+  z-index: 30;
+}
+
+.ticket {
+  width: 22%;
+  height: 12%;
+  left: 5%;
+  top: 43%;
+  padding: 1.1rem 1.4rem;
+  background: #eadcc1;
+  border-left: 8px solid #7bb8c8;
+  color: #222;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.18);
+  transform: rotate(-1deg);
+  z-index: 20;
+}
+
+.ticket h2 {
+  font-size: 2rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ticket p {
+  margin-top: 0.55rem;
+  font-size: 0.85rem;
+}
+
+.ticket span {
+  float: right;
+  font-weight: 700;
+}
+
+.frank {
+  width: 12%;
+  height: auto;
+  left: 7%;
+  top: 59%;
+  filter: drop-shadow(0 7px 8px rgba(0, 0, 0, 0.25));
+  z-index: 18;
+}
+
+.gameboy {
+  width: 10.5%;
+  height: auto;
+  left: 31%;
+  top: 48%;
+  transform: rotate(4deg);
+  filter: drop-shadow(0 9px 9px rgba(0, 0, 0, 0.25));
+  z-index: 28;
+}
+
+.totoro-note {
+  width: 16.5%;
+  height: auto;
+  left: 22%;
+  top: 80%;
+  transform: rotate(2deg);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.18);
+  z-index: 22;
+}
+
+.red-star {
+  width: 5.2%;
+  height: auto;
+  left: 34%;
+  top: 76%;
+  transform: rotate(-15deg);
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+  z-index: 35;
+}
+
+/* =========================
+   Upper Middle
+========================= */
+
+.pokemon-card {
+  width: 12.5%;
+  height: auto;
+  filter: drop-shadow(0 8px 9px rgba(0, 0, 0, 0.25));
+  z-index: 35;
+}
+
+.pokemon-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+}
+
+.umbreon-card {
+  left: 29%;
+  top: 14%;
+  transform: rotate(-5deg);
+}
+
+.sylveon-card {
+  left: 39.5%;
+  top: 17%;
+  transform: rotate(5deg);
+}
+
+.project-cartridge {
+  width: 18.5%;
+  height: 24%;
+  left: 53%;
+  top: 8%;
+  position: absolute;
+  overflow: visible;
+
+  background: #5d555d;
+  border-radius: 8px 8px 12px 12px;
+  color: #222;
+  box-shadow:
+    0 10px 18px rgba(0, 0, 0, 0.28),
+    inset 0 4px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -5px 0 rgba(0, 0, 0, 0.16);
+  transform: rotate(1deg);
+  z-index: 25;
+}
+
+/* cartridge top groove */
+.project-cartridge::before {
+  content: "";
+  position: absolute;
+  left: 9%;
+  top: 9%;
+  width: 82%;
+  height: 16%;
+  border-top: 2px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.22);
+  opacity: 0.75;
+}
+
+/* cartridge bottom notch */
+.project-cartridge::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  width: 16%;
+  height: 10%;
+  background: #484149;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  opacity: 0.9;
+}
+
+.project-label {
+  width: 82%;
+  height: 48%;
+  position: absolute;
+  left: 9%;
+  top: 30%;
+  padding: 0.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #ead8b4;
+  border: 3px solid #2b2520;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.22),
+    0 3px 5px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.project-label p {
+  font-style: oblique;
+  font-size: clamp(0.55rem, 0.9vw, 0.9rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transform: scaleX(0.92);
+  transform-origin: center;
+}
+
+.project-label p:last-child {
+  font-size: clamp(0.65rem, 1vw, 1rem);
+  letter-spacing: 0.01em;
+}
+
+/* taped-on caption */
+.project-cartridge small {
+  position: absolute;
+  display: block;
+  width: 85%;
+  left: 7.5%;
+  bottom: -2.35rem;
+  padding: 0.38rem 0.5rem;
+
+  background: rgba(199, 161, 103, 0.86);
+  color: #30251d;
+  font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+  font-size: 0.72rem;
+  text-align: center;
+
+  box-shadow:
+    0 3px 5px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: rotate(-1deg);
+}
+
+.project-cartridge small::before,
+.project-cartridge small::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: inherit;
+}
+
+.project-cartridge small::before {
+  left: -8px;
+  clip-path: polygon(100% 0, 0 20%, 100% 40%, 0 60%, 100% 80%, 0 100%, 100% 100%);
+}
+
+.project-cartridge small::after {
+  right: -8px;
+  clip-path: polygon(0 0, 100% 20%, 0 40%, 100% 60%, 0 80%, 100% 100%, 0 100%);
+}
+
+/* =========================
+   Right / Middle Cluster
+========================= */
+
+.sticky-note {
+  width: 18.5%;
+  min-height: 24%;
+  left: 75%;
+  top: 9%;
+  padding: 1.25rem 1.35rem;
+
+  background: #f2d36b;
+  font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transform: rotate(3deg);
+  z-index: 22;
+}
+
+.sticky-note h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.sticky-note p {
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+
+.sticky-note .indent {
+  padding-left: 1.1rem;
+}
+
+.clarity-badge {
+  width: 11.5%;
+  height: 27%;
+  left: 49%;
+  top: 45%;
+  padding: 2.4rem 0.75rem 0.7rem;
+
+  background: #f6eedf;
+  border-radius: 12px;
+  color: #222;
+  text-align: center;
+  box-shadow:
+    0 9px 15px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.65);
+  transform: rotate(20deg);
+  z-index: 36;
+}
+
+.badge-clip {
+  position: absolute;
+  width: 23%;
+  height: 22%;
+  left: 50%;
+  top: -10%;
+  transform: translateX(-50%);
+  background: linear-gradient(#2f2f2f, #858585);
+  border-radius: 7px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.28);
+}
+
+.clarity-badge h3 {
+  font-size: clamp(1rem, 1.45vw, 1.45rem);
+  letter-spacing: 0.02em;
+}
+
+.badge-line {
+  width: 78%;
+  height: 2px;
+  margin: 0.45rem auto;
+  background: #222;
+}
+
+.clarity-badge p {
+  margin-bottom: 0.45rem;
+  font-size: clamp(0.55rem, 0.72vw, 0.78rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.clarity-badge strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: clamp(0.58rem, 0.8vw, 0.85rem);
+}
+
+.barcode {
+  width: 85%;
+  height: 20px;
+  margin: 0 auto;
+  background: repeating-linear-gradient(
+    90deg,
+    #111 0 2px,
+    transparent 2px 5px,
+    #111 5px 7px,
+    transparent 7px 10px
+  );
+}
+
+.ny-button {
+  width: 17%;
+  height: auto;
+  left: 63%;
+  top: 40%;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 5px 6px rgba(0, 0, 0, 0.22));
+  z-index: 45;
+}
+
+.hirono {
+  width: 13%;
+  height: auto;
+  left: 79.5%;
+  top: 35%;
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.24));
+  z-index: 36;
+}
+
+.blue-star {
+  width: 5.5%;
+  height: auto;
+  left: 86%;
+  top: 31%;
+  transform: rotate(16deg);
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+  z-index: 40;
+}
+
+/* =========================
+   Bottom / Right Cluster
+========================= */
+
+.vhs-tape {
+  width: 19%;
+  height: 12.5%;
+  left: 41%;
+  top: 75%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: #111;
+  border-radius: 8px;
+  color: #111;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.26);
+  transform: rotate(1deg);
+  z-index: 20;
+}
+
+.vhs-circle {
+  width: 26%;
+  aspect-ratio: 1;
+  background: #080808;
+  border: 9px solid #2c2c2c;
+  border-radius: 50%;
+}
+
+.vhs-tape p {
+  width: 36%;
+  height: 58%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #e5d0a9;
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.cosmo-photo {
+  width: 12.5%;
+  height: 24%;
+  left: 61%;
+  top: 66%;
+  transform: rotate(-6deg);
+  z-index: 26;
+}
+
+.noella-photo {
+  width: 12.5%;
+  height: 24%;
+  left: 70.5%;
+  top: 66%;
+  transform: rotate(6deg);
+  z-index: 27;
+}
+
+.made-japan {
+  width: 10%;
+  height: auto;
+  right: 3%;
+  bottom: 4%;
+  transform: rotate(-3deg);
+  filter: drop-shadow(0 7px 7px rgba(0, 0, 0, 0.22));
+  z-index: 32;
+}
+
+.ace-card {
+  display: none;
+}
+
+/* =========================
+   Hover
+========================= */
+
+a.item {
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+a.item:hover {
+  filter: brightness(1.04);
+  z-index: 60;
+}
+
+/* =========================
+   Small Screens
+========================= */
+
+@media (max-width: 900px) {
+  .board-section {
+    overflow-x: auto;
+  }
+
+  .corkboard {
+    width: 1100px;
+    min-width: 1100px;
+  }
+}
